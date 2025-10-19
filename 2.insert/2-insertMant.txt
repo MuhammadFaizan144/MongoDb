@@ -1,0 +1,46 @@
+test> use admin
+switched to db admin
+admin> use school
+switched to db school
+school> db.students.insertOne({name:"Spongebob",age:30,gpa:3.2})
+{
+  acknowledged: true,
+  insertedId: ObjectId('68f50bb1b8d51fef26cebea4')
+}
+
+school> db.students.insertMany([{name:'Patrick',age:38,gpa:1.5},{name:'sandy',age:35,gpa:4.0},{name:'Gary',age:18,gpa:2.5}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('68f50e2bb8d51fef26cebea5'),
+    '1': ObjectId('68f50e2bb8d51fef26cebea6'),
+    '2': ObjectId('68f50e2bb8d51fef26cebea7')
+  }
+}
+school> db.students.find()
+[  
+  {
+    _id: ObjectId('68f50bb1b8d51fef26cebea4'),
+    name: 'Spongebob',
+    age: 30,
+    gpa: 3.2
+  },
+  {
+    _id: ObjectId('68f50e2bb8d51fef26cebea5'),
+    name: 'Patrick',
+    age: 38,
+    gpa: 1.5
+  },
+  {
+    _id: ObjectId('68f50e2bb8d51fef26cebea6'),
+    name: 'sandy',
+    age: 35,
+    gpa: 4
+  },
+  {
+    _id: ObjectId('68f50e2bb8d51fef26cebea7'),
+    name: 'Gary',
+    age: 18,
+    gpa: 2.5
+  }
+]

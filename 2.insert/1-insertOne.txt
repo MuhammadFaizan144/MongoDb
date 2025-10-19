@@ -1,0 +1,18 @@
+admin> use school
+switched to db school
+school> db.students.insertOne({name:"Spongebob",age:30,gpa:3.2})
+{
+  acknowledged: true,
+  insertedId: ObjectId('68f50bb1b8d51fef26cebea4')
+}
+school> db.students.field
+school.students.field
+school> db.students.find()
+[  
+  {
+    _id: ObjectId('68f50bb1b8d51fef26cebea4'),
+    name: 'Spongebob',
+    age: 30,
+    gpa: 3.2
+  }
+]
