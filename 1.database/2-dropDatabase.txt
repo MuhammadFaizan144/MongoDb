@@ -1,0 +1,13 @@
+test> show dbs
+admin   40.00 KiB
+config  72.00 KiB
+
+
+school> db.dropDatabase()
+{ ok: 1, dropped: 'school' }
+school> show dbs
+admin    40.00 KiB
+config  108.00 KiB
+local    72.00 KiB
+school>
+

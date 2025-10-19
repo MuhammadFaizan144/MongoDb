@@ -1,0 +1,18 @@
+test> show dbs
+admin   40.00 KiB
+config  72.00 KiB
+local   72.00 KiB
+test> use admin
+switched to db admin
+admin> use school
+switched to db school
+school> show dbs
+admin   40.00 KiB
+config  72.00 KiB
+local   72.00 KiB
+
+Main point
+
+school> db.createCollection('students')
+{ ok: 1 }
+school>
