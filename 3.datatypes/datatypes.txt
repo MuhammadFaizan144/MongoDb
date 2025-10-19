@@ -1,0 +1,21 @@
+db.students.insertOne({
+  name: "Larry123",                 string
+  age: 38,                          integer
+  gpa: 1.5,                         double
+  fulltime: false,                  boolean
+  registerDate: new Date(),         date Object
+  
+  gradutionDate: null,              null
+
+  courses: [                        array
+    "biology",
+    "chemistry",
+    "calculus"
+  ],
+
+  "address": {                      nested documents
+    street: "123 Fake St.",
+    city: "bikini bottom",
+    zip: 12345
+  }
+})
