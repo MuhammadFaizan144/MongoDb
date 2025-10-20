@@ -1,0 +1,26 @@
+to find a specfic thing in a table
+
+db.students.find({},{name:true})
+[
+  { _id: ObjectId('68f50fd2039ebdb6eee96681'), name: 'Spongebob' },
+  { _id: ObjectId('68f51030039ebdb6eee96683'), name: 'Patrick' },
+  { _id: ObjectId('68f51030039ebdb6eee96684'), name: 'sandy' },
+  { _id: ObjectId('68f51030039ebdb6eee96685'), name: 'Gary' },
+  { _id: ObjectId('68f5125a4fe8416448cebea5'), name: 'Larry123' }
+]
+school> db.students.find({},{_id:false,name:true})
+[
+  { name: 'Spongebob' },
+  { name: 'Patrick' },
+  { name: 'sandy' },
+  { name: 'Gary' },
+  { name: 'Larry123' }
+]
+school> db.students.find({},{_id:false,name:true,gpa:true})
+[
+  { name: 'Spongebob', gpa: 3.2 },
+  { name: 'Patrick', gpa: 1.5 },
+  { name: 'sandy', gpa: 4 },
+  { name: 'Gary', gpa: 2.5 },
+  { name: 'Larry123', gpa: 1.5 }
+]
