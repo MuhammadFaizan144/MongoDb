@@ -1,0 +1,36 @@
+db.students.deleteOne({name:"Larry123"})
+{ acknowledged: true, deletedCount: 1 }
+school> db.students.find()
+[  
+  {
+    _id: ObjectId('68f50fd2039ebdb6eee96681'),
+    name: 'Spongebob',
+    age: 30,
+    gpa: 3.2,
+    fullTime: false
+  },
+  {
+    _id: ObjectId('68f51030039ebdb6eee96683'),
+    name: 'Patrick',
+    age: 38,
+    gpa: 1.5,
+    fullTime: false
+  },
+  {
+    _id: ObjectId('68f51030039ebdb6eee96684'),
+    name: 'sandy',
+    age: 35,
+    gpa: 4,
+    fullTime: false
+  },
+  {
+    _id: ObjectId('68f51030039ebdb6eee96685'),
+    name: 'Gary',
+    age: 18,
+    gpa: 2.5,
+    fullTime: false
+  }
+]
+school> db.students.deleteMany({fullTime:false})
+{ acknowledged: true, deletedCount: 4 }
+school> db.students.find()
