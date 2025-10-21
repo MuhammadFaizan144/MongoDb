@@ -1,0 +1,159 @@
+db.students.updateMany({},{$set:{fullTime:false}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 5,
+  modifiedCount: 5,
+  upsertedCount: 0
+}
+school> db.students.find()
+[  
+  {
+    _id: ObjectId('68f50fd2039ebdb6eee96681'),
+    name: 'Spongebob',
+    age: 30,
+    gpa: 3.2,
+    fullTime: false
+  },
+  {
+    _id: ObjectId('68f51030039ebdb6eee96683'),
+    name: 'Patrick',
+    age: 38,
+    gpa: 1.5,
+    fullTime: false
+  },
+  {
+    _id: ObjectId('68f51030039ebdb6eee96684'),
+    name: 'sandy',
+    age: 35,
+    gpa: 4,
+    fullTime: false
+  },
+  {
+    _id: ObjectId('68f51030039ebdb6eee96685'),
+    name: 'Gary',
+    age: 18,
+    gpa: 2.5,
+    fullTime: false
+  },
+  {
+    _id: ObjectId('68f5125a4fe8416448cebea5'),
+    name: 'Larry123',
+    age: 38,
+    gpa: 1.5,
+    fulltime: false,
+    registerDate: ISODate('2025-10-19T16:31:22.814Z'),
+    gradutionDate: null,
+    courses: [ 'biology', 'chemistry', 'calculus' ],
+    address: { street: '123 Fake St.', city: 'bikini bottom', zip: 12345 },
+    fullTime: false
+  }
+]
+school> db.students.updateOne({name:"Gary"},{$unset:{fullTime:""}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+school> db.students.find()
+[  
+  {
+    _id: ObjectId('68f50fd2039ebdb6eee96681'),
+    name: 'Spongebob',
+    age: 30,
+    gpa: 3.2,
+    fullTime: false
+  },
+  {
+    _id: ObjectId('68f51030039ebdb6eee96683'),
+    name: 'Patrick',
+    age: 38,
+    gpa: 1.5,
+    fullTime: false
+  },
+  {
+    _id: ObjectId('68f51030039ebdb6eee96684'),
+    name: 'sandy',
+    age: 35,
+    gpa: 4,
+    fullTime: false
+  },
+  {
+    _id: ObjectId('68f51030039ebdb6eee96685'),
+    name: 'Gary',
+    age: 18,
+    gpa: 2.5
+  },
+  {
+    _id: ObjectId('68f5125a4fe8416448cebea5'),
+    name: 'Larry123',
+    age: 38,
+    gpa: 1.5,
+    fulltime: false,
+    registerDate: ISODate('2025-10-19T16:31:22.814Z'),
+    gradutionDate: null,
+    courses: [ 'biology', 'chemistry', 'calculus' ],
+    address: { street: '123 Fake St.', city: 'bikini bottom', zip: 12345 },
+    fullTime: false
+  }
+]
+
+
+if someone have no fullTime exist than gave them fullTime true
+ db.students.updateMany({fullTime:{$exists:false}},{$set:{fullTime:true}})
+
+
+
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+school> db.students.find()
+[  
+  {
+    _id: ObjectId('68f50fd2039ebdb6eee96681'),
+    name: 'Spongebob',
+    age: 30,
+    gpa: 3.2,
+    fullTime: false
+  },
+  {
+    _id: ObjectId('68f51030039ebdb6eee96683'),
+    name: 'Patrick',
+    age: 38,
+    gpa: 1.5,
+    fullTime: false
+  },
+  {
+    _id: ObjectId('68f51030039ebdb6eee96684'),
+    name: 'sandy',
+    age: 35,
+    gpa: 4,
+    fullTime: false
+  },
+  {
+    _id: ObjectId('68f51030039ebdb6eee96685'),
+    name: 'Gary',
+    age: 18,
+    gpa: 2.5,
+    fullTime: true
+  },
+  {
+    _id: ObjectId('68f5125a4fe8416448cebea5'),
+    name: 'Larry123',
+    age: 38,
+    gpa: 1.5,
+    fulltime: false,
+    registerDate: ISODate('2025-10-19T16:31:22.814Z'),
+    gradutionDate: null,
+    courses: [ 'biology', 'chemistry', 'calculus' ],
+    address: { street: '123 Fake St.', city: 'bikini bottom', zip: 12345 },
+    fullTime: false
+  }
+]

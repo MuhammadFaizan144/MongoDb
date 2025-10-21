@@ -1,0 +1,17 @@
+db.students.updateOne({_id:ObjectId('68f51030039ebdb6eee96683')},{$unset:{fullTime:""}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+school> db.students.find({_id:ObjectId('68f51030039ebdb6eee96683')})
+[  
+  {
+    _id: ObjectId('68f51030039ebdb6eee96683'),
+    name: 'Patrick',
+    age: 38,
+    gpa: 1.5
+  }
+]

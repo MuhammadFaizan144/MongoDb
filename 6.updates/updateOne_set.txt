@@ -1,0 +1,29 @@
+db.students.updateOne(filter,update)
+
+
+school> db.students.updateOne({name:"Spongebob"},{$set:{fullTime:true}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+school> db.students.find({name:"Spongebob"})
+[  
+  {
+    _id: ObjectId('68f50fd2039ebdb6eee96681'),
+    name: 'Spongebob',
+    age: 30,
+    gpa: 3.2,
+    fullTime: true
+  }
+]
+school> db.students.updateOne({_id:ObjectId('68f51030039ebdb6eee96683')},{$set:{fullTime:false}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
