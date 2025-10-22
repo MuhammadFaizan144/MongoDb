@@ -1,0 +1,17 @@
+db.students.find({$or:[{fullTime:true},{age:{$lte:32}}]})
+[  
+  {
+    _id: ObjectId('68f50fd2039ebdb6eee96681'),
+    name: 'Spongebob',
+    age: 30,
+    gpa: 3.2,
+    fullTime: false
+  },
+  {
+    _id: ObjectId('68f51030039ebdb6eee96685'),
+    name: 'Gary',
+    age: 18,
+    gpa: 2.5,
+    fullTime: false
+  }
+]

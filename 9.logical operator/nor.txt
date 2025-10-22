@@ -1,0 +1,32 @@
+Both condition should be false
+
+
+db.students.find({$nor:[{fullTime:true},{age:{$lte:32}}]})
+[  
+  {
+    _id: ObjectId('68f51030039ebdb6eee96683'),
+    name: 'Patrick',
+    age: 38,
+    gpa: 1.5,
+    fullTime: false
+  },
+  {
+    _id: ObjectId('68f51030039ebdb6eee96684'),
+    name: 'sandy',
+    age: 35,
+    gpa: 4,
+    fullTime: false
+  },
+  {
+    _id: ObjectId('68f5125a4fe8416448cebea5'),
+    name: 'Larry123',
+    age: 38,
+    gpa: 1.5,
+    fulltime: false,
+    registerDate: ISODate('2025-10-19T16:31:22.814Z'),
+    gradutionDate: null,
+    courses: [ 'biology', 'chemistry', 'calculus' ],
+    address: { street: '123 Fake St.', city: 'bikini bottom', zip: 12345 },
+    fullTime: false
+  }
+]
