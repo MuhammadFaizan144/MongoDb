@@ -1,0 +1,20 @@
+show collections
+students
+school> db.createCollection("teacher",{capped:true,size:10000000,max:100},{autoIndexId:false})
+{ ok: 1 }
+school> show collections
+students
+teacher 
+school> db.createCollection('cr',{capped:true,size:100000,max:100},{autoIndexId:false})
+{ ok: 1 }
+school> show collections
+cr
+students
+teacher
+
+
+db.cr.drop()
+true
+school> show collections
+students
+teacher
